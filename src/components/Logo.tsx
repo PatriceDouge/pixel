@@ -4,7 +4,7 @@ import CreoleProLogo from '@/images/logos/creole-pro-logo.png';
 
 export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
     return (
-        <h1>pixel.jpg</h1>
+        <h1 className='text-4xl font-medium tracking-tight text-white sm:text-3xl'>pixel.jpg</h1>
     )
   }
   
