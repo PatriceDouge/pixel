@@ -1,7 +1,6 @@
-import Image from 'next/image'
-
-import { Button } from '@/components/Button'
+import { Button } from '@/components/ui/button'
 import { Container } from '@/components/Container'
+import Link from 'next/link'
 
 export function Hero() {
   return (
@@ -13,7 +12,9 @@ export function Hero() {
       With pixel.jpg, you can generate pixel art from any image using AI.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/create">Get started</Button>
+        <Button>
+          <Link href="/create">Get started</Link>
+        </Button>
       </div>
     </Container>
   )
