@@ -1,9 +1,23 @@
+'use client'
+
 import { Label } from "@/components/Label"
 import { Input } from "@/components/Input"
 import { Button } from "@/components/Button"
 import { Container } from "@/components/Container"
 
 export default function Component() {
+  
+  const handleFileUpload = () => {
+    const input: HTMLInputElement = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.onchange = (event: Event) => {
+      const file: File | undefined = (event.target as HTMLInputElement).files?.[0];
+      // Process the uploaded file here
+    };
+    input.click();
+  }
+
   return (
     <div>
       <Container className="pb-0">
@@ -21,10 +35,7 @@ export default function Component() {
           <Label className="text-lg font-medium" htmlFor="image">
             Upload Image
           </Label>
-          <div className="border border-dashed border-gray-200 rounded-lg w-full max-w-md p-4 flex items-center justify-center gap-2 text-center text-sm border border-gray-200 dark:border-gray-800">
-            <UploadIcon className="w-6 h-6" />
-            <span>Drag and drop your image here or choose a file</span>
-          </div>
+          <Button onClick={handleFileUpload}>Upload file</Button>
         </div>
         <Button>Generate Image</Button>
         <Button>
